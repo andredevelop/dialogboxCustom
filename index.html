@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exemplos</title>
+
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tahoma';
+        }
+        .confirmBox{
+            width: 100%;
+            max-width: 250px;
+            font-size: 12px;
+            padding: 10px 8px;
+            margin: 20px auto 0 auto;
+            background-color: #220044;
+            color: white;
+            display: none;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .confirmBox h2{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        #s,#n{
+            border: 1px solid white;
+            border-radius: 8px;
+            width: 30%;
+            min-width: 50px;
+            padding: 4px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+        
+        .boxColor{
+            border: 1px solid #220044;
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            margin: 20px auto 0 auto;
+            color: black;
+            text-align: center;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .msgBoxColor{
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="confirmBox">
+        <h2>Você deseja mesmo colorir esta box?</h2>
+        <span id="s">Sim</span><!-- Sim -->
+        <span id="n">Não</span><!-- Não -->
+    </div><!-- confirmBox -->
+
+    <div class="boxColor">
+        <p class="msgBoxColor">Ainda não estou colorida! :C</p><!--msgBox-->
+    </div><!-- boxColor -->
+
+<script>
+    var confirmBox = document.querySelector('.confirmBox');
+    var boxColor = document.querySelector('.boxColor');
+    var msgBoxColor = document.querySelector('.msgBoxColor');
+    var sim = document.getElementById('s');
+    var nao = document.getElementById('n');
+
+    boxColor.addEventListener('click',()=>{
+        confirmBox.style.display = 'flex';
+    })
+
+    s.addEventListener('click',()=>{
+        if(msgBoxColor.textContent.trim() === 'Você me iludiu, achei que agora eu mudaria! :C'){
+            boxColor.style.background = '#5A3E79';
+            msgBoxColor.innerHTML = 'Eu te perdoo por me enganar, estou bem melhor! :D';
+            msgBoxColor.style.color = 'white';
+            confirmBox.style.display = 'none';
+        }else{
+            boxColor.style.background = '#5A3E79';
+            msgBoxColor.innerHTML = 'Agora sim, bem melhor! Valeu! :D';
+            msgBoxColor.style.color = 'white';
+            confirmBox.style.display = 'none';
+        }
+    })
+
+    n.addEventListener('click',()=>{
+        msgBoxColor.innerHTML = 'Você me iludiu, achei que agora eu mudaria! :C';
+        boxColor.style.background = 'white';
+        msgBoxColor.style.color = 'black';
+        confirmBox.style.display = 'none';
+    })
+</script>
+</body>
+</html>
